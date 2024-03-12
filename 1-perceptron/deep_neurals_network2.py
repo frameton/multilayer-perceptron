@@ -1,11 +1,11 @@
 from sklearn.datasets import make_blobs, make_circles
 from sklearn.metrics import accuracy_score
 #from tools import colors, load_csv, parse_csv, get_csv_object
+from sklearn.model_selection import train_test_split
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from tqdm import tqdm
-from sklearn.model_selection import train_test_split
 
 def log_loss(A, y):
     return 1 / len(y) * np.sum(-y * np.log(A) - (1 - y) * np.log(1 - A))
@@ -110,6 +110,7 @@ if __name__ == "__main__":
 
     print('dimensions de X:', X.shape)
     print('dimensions de y:', y.shape)
+
 
     plt.scatter(X[0, :], X[1, :], c=y, cmap='summer')
     plt.show()

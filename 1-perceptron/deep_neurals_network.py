@@ -37,7 +37,7 @@ def log_loss(A, y):
     return 1 / len(y) * np.sum(-y * np.log(A + epsilon) - (1 - y) * np.log(1 - A + epsilon))
 
 
-def back_propagation(y, activations, parametres):
+def back_propagation(y, parametres, activations):
 
     m = y.shape[1]
     C = len(parametres) // 2
